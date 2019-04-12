@@ -1,6 +1,6 @@
 {
   "name": "scriptleaf",
-  "version": "1.1.15",
+  "version": "1.1.16",
   "description": "ScriptLeaf aims to provide a robust lightweight Javascript web application framework that provides components, templates, and state without bloating up applications and straying away from vanilla Javascript syntax and semantics.",
   "main": "src/index.js",
   "author": "Patrick Trester",
@@ -17,7 +17,8 @@
     "collectCoverage": true
   },
   "repository": {
-    "url": "https://glitch.com/edit/#!/scriptleaf"
+    "glitch": "https://glitch.com/~scriptleaf",
+    "git": "https://github.com/uraikus/scriptleaf"
   },
   "license": "MIT",
   "keywords": [

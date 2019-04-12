@@ -1,4 +1,7 @@
 # Changelog
+## Version 1.1.16
+* Updated the readme with git link
+* Updated the package.json with git link and redefined the glitch link.
 ## Version 1.1.15
 * Added import/export of JSON for State Objects
 * Added clear/clearAll methods to state.

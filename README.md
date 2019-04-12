@@ -2,7 +2,7 @@ ScriptLeaf
 =================
 ![alt text](https://cdn.glitch.com/e82b5b1a-c4da-4d19-8e46-44270e4276f0%2Fcode-coverage-badge.svg?1549736166571 "code coverage 100%")
 
-[GitHub](https://glitch.com/edit/#!/hello-scriptleaf)
+[GitHub](https://github.com/uraikus/scriptleaf)
 
 ScriptLeaf aims to provide a robust lightweight Javascript web application framework that provides components, templates, and state without bloating up applications and straying away from vanilla Javascript syntax and semantics.
 
