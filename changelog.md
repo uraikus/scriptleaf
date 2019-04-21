@@ -1,4 +1,8 @@
 # Changelog
+## Version 2.0.0
+* Added parentElement attribute in template objects and in createElement object argument. Supports querySelector:String or DOM Element references.
+* Updated from import/export ES6 to Node require
+* Added compiler for <script> tag browser releases
 ## Version 1.1.16
 * Updated the readme with git link
 * Updated the package.json with git link and redefined the glitch link.

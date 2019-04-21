@@ -1,6 +1,6 @@
 /* globals Element */
 
-import { assignAttributes } from './common.js'
+const assignAttributes = require('./common.js')
 
 function createElement () {
   let tagName = 'div'
@@ -15,6 +15,11 @@ function createElement () {
   if (attributes.tagName) {
     tagName = attributes.tagName
     delete attributes.tagName
+  }
+  if (attributes.parentElement) {
+    if (attributes.parentElement instanceof Element) parentElement = attributes.parentElement
+    else if (typeof attributes.parentElement === 'string') parentElement = document.querySelector(attributes.parentElement)
+    delete attributes.parentElement
   }
   let element
   if (tagName === 'td') {
@@ -78,5 +83,4 @@ function processChild (childObject, parentElement) {
   }
 }
 
-export default createElement
-export { createElement }
+module.exports =  createElement

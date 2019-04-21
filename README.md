@@ -193,7 +193,10 @@ let newNoteTemplate = (time, details, initials) => ({
 let newNote = newNoteTemplate(1200, 'INFO: Everything accomplished at this time.', 'PT')
 createElement(newNote, eventsLog)
 ```
-Elements without a tagName will default to a 'div.'
-Strings in the "children" array will become textNodes.
+
+***Misc. Notes***
+* Elements without a tagName will default to a 'div.'
+* Strings in the "children" array will become textNodes.
+* When using "createElement" or template objects, you can use the "parentElement" attribute in the object as a querySelector:String or a DOM Element to append to a particular element.
 
 Checkout: [Hello Scriptleaf Glitch Project](https://glitch.com/edit/#!/hello-scriptleaf)
