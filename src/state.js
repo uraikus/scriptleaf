@@ -73,6 +73,21 @@ class State {
   }
 }
 
+const GLOBAL_STATE = new State()
+
+Object.assign(State, {
+  setState: GLOBAL_STATE.set.bind(GLOBAL_STATE),
+  getState: GLOBAL_STATE.get.bind(GLOBAL_STATE),
+  bindState: GLOBAL_STATE.bind.bind(GLOBAL_STATE),
+  clearStateSubscribers: GLOBAL_STATE.clearSubscribers.bind(GLOBAL_STATE),
+  addStateListener: GLOBAL_STATE.addListener.bind(GLOBAL_STATE),
+  importJsonToState: GLOBAL_STATE.importJSON.bind(GLOBAL_STATE),
+  exportJsonState: GLOBAL_STATE.exportJSON.bind(GLOBAL_STATE),
+  exportStringifiedState: GLOBAL_STATE.exportStringified.bind(GLOBAL_STATE),
+  clearState: GLOBAL_STATE.clear.bind(GLOBAL_STATE),
+  clearAllState: GLOBAL_STATE.clearAll.bind(GLOBAL_STATE)
+})
+
 function validateState(stateName) {
   if (this.state[stateName] === undefined || this.state[stateName].validState !== true) throw new Error('State does not exist!')
 }
@@ -99,17 +114,4 @@ function create (stateName, stateValue) {
   }
 }
 
-const GLOBAL_STATE = new State()
-const setState = GLOBAL_STATE.set.bind(GLOBAL_STATE)
-const getState = GLOBAL_STATE.get.bind(GLOBAL_STATE)
-const bindState = GLOBAL_STATE.bind.bind(GLOBAL_STATE)
-const clearStateSubscribers = GLOBAL_STATE.clearSubscribers.bind(GLOBAL_STATE)
-const addStateListener = GLOBAL_STATE.addListener.bind(GLOBAL_STATE)
-const importJsonToState = GLOBAL_STATE.importJSON.bind(GLOBAL_STATE)
-const exportJsonState = GLOBAL_STATE.exportJSON.bind(GLOBAL_STATE)
-const exportStringifiedState = GLOBAL_STATE.exportStringified.bind(GLOBAL_STATE)
-const clearState = GLOBAL_STATE.clear.bind(GLOBAL_STATE)
-const clearAllState = GLOBAL_STATE.clearAll.bind(GLOBAL_STATE)
-
-export default State
-export { setState, getState, bindState, addStateListener, clearStateSubscribers, importJsonToState, exportJsonState, exportStringifiedState, clearState, clearAllState }
+module.exports = State

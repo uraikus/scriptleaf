@@ -7,4 +7,4 @@ function assignAttributes (object, attributes) {
   }
 }
 
-export { assignAttributes }
+module.exports = assignAttributes

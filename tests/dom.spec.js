@@ -7,6 +7,18 @@ test('Should create a div element', () => {
   expect(div.tagName).toBe('DIV')
 })
 
+test('Should create a div element and append child via parentElement DOM Element reference', () => {
+  let container = createElement({id: 'dom-reference'})
+  let div = createElement({parentElement: container})
+  expect(div.parentElement).toBe(container)
+})
+
+test('Should create a div element and append child via parentElement querySelector', () => {
+  let container = createElement({id: 'dom-reference'})
+  let div = createElement({parentElement: '#dom-reference'})
+  expect(div.parentElement.id).toBe('dom-reference')
+})
+
 test('Should create an anchor element', () => {
   let anchor = createElement({ tagName: 'a' })
   expect(anchor.tagName).toBe('A')
@@ -81,8 +93,8 @@ test('Should append element to body though bound to an object', () => {
 
 test('Should append element to a bound element', () => {
   let div = createElement()
-  createElement.bind(div)({ id: 'test' })
-  expect(div.firstElementChild.id).toBe('test')
+  let test = createElement.bind(div)({ id: 'test' })
+  expect(div.firstElementChild).toBe(test)
 })
 
 test('Should fire "oncreation" event', () => {

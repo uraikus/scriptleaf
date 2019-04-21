@@ -1,6 +1,6 @@
 /* globals test, expect */
 
-import { State, setState, bindState, getState, addStateListener, clearStateSubscribers, importJsonToState, exportJsonState, exportStringifiedState, clearState, clearAllState } from '../src/index.js'
+import State, { setState, bindState, getState, addStateListener, clearStateSubscribers, importJsonToState, exportJsonState, exportStringifiedState, clearState, clearAllState } from '../src/index.js'
 
 test('Should set and read global state:', () => {
   setState('myState', 0)
